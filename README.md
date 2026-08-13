@@ -4,7 +4,7 @@ Page unique de démonstration pour **MC Peinture**, entreprise de peinture à Ni
 
 ## ⚡ Points forts
 
-- **Léger & sans build** : un seul fichier `index.html`, sans framework ni dépendance. Police système, icônes/cartes en SVG intégré. Les photos sont des images **libres de droits (licence Unsplash, usage commercial autorisé)** servies via CDN optimisé (redimensionnement automatique, `loading="lazy"`, `fetchpriority` sur le hero) → bons Core Web Vitals / Lighthouse.
+- **Léger & sans build** : un seul fichier `index.html`, sans framework ni dépendance. Police système, icônes/cartes en SVG intégré. Les photos sont des images **libres de droits (Unsplash / Pexels, usage commercial autorisé)** servies via CDN optimisé (redimensionnement automatique, `loading="lazy"`, `fetchpriority` sur le hero) → bons Core Web Vitals / Lighthouse.
 - **Responsive mobile-first** + barre d'action fixe (Appeler / Devis) sur mobile, là où se font 3 recherches sur 4.
 - **SEO on-page** : `<title>` et meta description géolocalisés, H1/H2 avec « Nieul-sur-Mer » et « La Rochelle », alt text descriptifs, canonical, Open Graph.
 - **Données structurées Schema.org** (JSON-LD) : `HousePainter` (LocalBusiness) avec adresse, géo, horaires, zone desservie, prestations ; `FAQPage` (éligible aux résultats enrichis) ; `BreadcrumbList`.
@@ -19,7 +19,8 @@ Ces éléments sont des **placeholders de démonstration** :
 1. **Téléphone** : remplacer `06 XX XX XX XX` et `+33600000000` (attributs `tel:`, header, footer, JSON-LD, barre mobile).
 2. **Email** : remplacer `contact@mc-peinture-nieul.fr`.
 3. **Nom de domaine** : remplacer `https://www.mc-peinture-nieul.fr/` (canonical, Open Graph, sitemap, robots, JSON-LD).
-4. **Photos de chantiers** : les photos actuelles sont des images de stock libres de droits (Unsplash). Les remplacer par **vos vraies photos de chantiers** (avant/après), idéalement auto-hébergées dans un dossier `/img` pour la performance et l'authenticité. C'est le principal levier de conversion.
+4. **Photos de chantiers** : les photos actuelles sont des images de stock libres de droits (Unsplash / Pexels). Les remplacer par **vos vraies photos de chantiers** (avant/après), idéalement auto-hébergées dans un dossier `/img` pour la performance et l'authenticité. C'est le principal levier de conversion.
+10. **Prix** : volontairement, aucun tarif n'est affiché sur le site (le prix dépend du projet, devis gratuit sous 24h). Ne pas ajouter de grille tarifaire sans validation métier.
 5. **Avis** : remplacer par de **vrais** avis Google. ⚠️ Ne jamais publier de faux avis ni de faux `aggregateRating` (sanctions Google) : la note 4,9/5 et les 27 avis du JSON-LD sont des exemples.
 6. **Horaires** : vérifier les horaires réels.
 7. **Mentions légales / RGPD** : créer les pages ou remplacer par le contenu réel.
