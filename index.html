@@ -4,7 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-<title>Peintre à Nieul-sur-Mer & La Rochelle — MC Peinture | Devis gratuit 24h</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<title>Peintre à Nieul-sur-Mer & La Rochelle | MC Peinture | Devis gratuit 24h</title>
 <meta name="description" content="MC Peinture, entreprise de peinture à Nieul-sur-Mer (17). Peinture intérieure, extérieure, ravalement de façade, revêtements et vitrerie sur La Rochelle et son agglomération. Devis gratuit sous 24h, artisans assurés décennale." />
 <meta name="keywords" content="peintre Nieul-sur-Mer, peintre La Rochelle, ravalement façade Nieul-sur-Mer, peinture intérieure La Rochelle, entreprise de peinture 17, devis peinture gratuit" />
 <link rel="canonical" href="https://www.mc-peinture-nieul.fr/" />
@@ -21,12 +22,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:site_name" content="MC Peinture" />
-<meta property="og:title" content="Peintre à Nieul-sur-Mer & La Rochelle — MC Peinture" />
+<meta property="og:title" content="Peintre à Nieul-sur-Mer & La Rochelle | MC Peinture" />
 <meta property="og:description" content="Entreprise de peinture à Nieul-sur-Mer : intérieur, extérieur, ravalement de façade, vitrerie. Devis gratuit sous 24h sur La Rochelle et son agglomération." />
 <meta property="og:url" content="https://www.mc-peinture-nieul.fr/" />
 <meta property="og:image" content="https://images.unsplash.com/photo-1693985120993-e9b203ce7631?auto=format&fit=crop&w=1200&h=630&q=70" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Peintre à Nieul-sur-Mer & La Rochelle — MC Peinture" />
+<meta name="twitter:title" content="Peintre à Nieul-sur-Mer & La Rochelle | MC Peinture" />
 <meta name="twitter:description" content="Devis gratuit sous 24h. Peinture intérieure & extérieure, ravalement de façade, vitrerie sur La Rochelle." />
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1693985120993-e9b203ce7631?auto=format&fit=crop&w=1200&h=630&q=70" />
 <meta name="theme-color" content="#0f2c4d" />
@@ -262,7 +263,8 @@
   .towns span{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);padding:.5rem .9rem;border-radius:50px;font-size:.9rem;font-weight:600}
   .zone-map{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:.7rem}
   .zone-map svg{width:100%;height:auto;border-radius:12px}
-  .zone-map iframe{width:100%;height:360px;border:0;border-radius:12px;display:block}
+  .zone-map #map{width:100%;height:360px;border-radius:12px}
+  .zone-map .leaflet-popup-content-wrapper,.zone-map .leaflet-popup-tip{background:#fff;color:var(--texte)}
   .map-link{display:inline-block;margin-top:.75rem;color:#ffb488;font-weight:700;font-size:.92rem}
   .map-link:hover{color:#fff}
 
@@ -387,7 +389,7 @@
     <div>
       <span class="eyebrow" style="color:#ffb488">Artisan peintre à Nieul-sur-Mer &amp; La Rochelle · depuis 2011</span>
       <h1 id="h1">Sublimez votre intérieur,<br><span class="accent">du sol au plafond.</span></h1>
-      <p class="lead"><strong style="color:#fff;font-weight:700">Votre peintre de confiance sur l'agglomération rochelaise.</strong> Peinture intérieure et extérieure, ravalement de façade, revêtements de sols et murs, vitrerie — par une équipe d'artisans locaux, pour des finitions impeccables, dans les temps et sans mauvaise surprise.</p>
+      <p class="lead"><strong style="color:#fff;font-weight:700">Votre peintre de confiance sur l'agglomération rochelaise.</strong> Peinture intérieure et extérieure, ravalement de façade, revêtements de sols et murs, vitrerie, par une équipe d'artisans locaux, pour des finitions impeccables, dans les temps et sans mauvaise surprise.</p>
       <div class="hero-cta">
         <a class="btn btn-primary btn-lg" href="#contact">Demander un devis gratuit</a>
         <a class="btn btn-ghost btn-lg" href="tel:+33600000000">Appeler l'équipe</a>
@@ -518,7 +520,7 @@
         <a class="btn btn-primary" style="margin-top:1rem" href="#contact">Vérifier ma commune</a>
       </div>
       <div class="zone-map">
-        <iframe title="Carte de la zone d'intervention de MC Peinture, Nieul-sur-Mer et agglomération de La Rochelle" src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2400%2C46.1400%2C-1.1000%2C46.2800&amp;layer=mapnik&amp;marker=46.2331%2C-1.1663" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="map" role="img" aria-label="Carte de la zone d'intervention de MC Peinture, Nieul-sur-Mer et agglomération de La Rochelle"></div>
         <a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=4%20Rue%20du%20Four%20%C3%A0%20Chaux%2C%2017137%20Nieul-sur-Mer" target="_blank" rel="noopener">Itinéraire vers notre atelier →</a>
       </div>
     </div>
@@ -551,7 +553,7 @@
     <div class="center">
       <span class="eyebrow">Ils nous ont fait confiance</span>
       <h2 id="av-title">Les avis de nos clients</h2>
-      <p class="lead">Une note moyenne de 4,9/5 sur l'ensemble de nos chantiers. <em>(Avis de démonstration — à remplacer par vos vrais avis Google.)</em></p>
+      <p class="lead">Une note moyenne de 4,9/5 sur l'ensemble de nos chantiers. <em>(Avis de démonstration : à remplacer par vos vrais avis Google.)</em></p>
     </div>
     <div class="review-grid">
       <blockquote class="review">
@@ -692,7 +694,7 @@
       </div>
     </div>
     <div class="legal">
-      <span>© 2026 MC Peinture — SARL au capital de 1 500 € · SIRET 535 265 367 00024 · APE 4334Z</span>
+      <span>© 2026 MC Peinture, SARL au capital de 1 500 € · SIRET 535 265 367 00024 · APE 4334Z</span>
       <span>Mentions légales · Politique de confidentialité · Site de démonstration</span>
     </div>
   </div>
@@ -704,6 +706,17 @@
   <a class="btn btn-primary" href="#contact">Devis gratuit</a>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  // Carte zone d'intervention
+  var map = L.map('map', { scrollWheelZoom: false }).setView([46.2331, -1.1663], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+  L.marker([46.2331, -1.1663]).addTo(map)
+    .bindPopup('MC Peinture<br>4 Rue du Four à Chaux, Nieul-sur-Mer').openPopup();
+</script>
 <script>
   // Menu mobile
   var burger = document.getElementById('burger');
