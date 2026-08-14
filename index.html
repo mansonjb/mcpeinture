@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
 <link rel="preconnect" href="https://images.pexels.com" crossorigin />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <title>Peintre à Nieul-sur-Mer & La Rochelle | MC Peinture | Devis gratuit 24h</title>
 <meta name="description" content="MC Peinture, entreprise de peinture à Nieul-sur-Mer (17). Peinture intérieure, extérieure, ravalement de façade, boiseries et enduits décoratifs sur La Rochelle et son agglomération. Devis gratuit sous 24h, artisans assurés décennale." />
 <meta name="keywords" content="peintre Nieul-sur-Mer, peintre La Rochelle, ravalement façade Nieul-sur-Mer, peinture intérieure La Rochelle, entreprise de peinture 17, devis peinture gratuit" />
@@ -16,8 +15,8 @@
 <!-- Géolocalisation SEO local -->
 <meta name="geo.region" content="FR-17" />
 <meta name="geo.placename" content="Nieul-sur-Mer" />
-<meta name="geo.position" content="46.2331;-1.1663" />
-<meta name="ICBM" content="46.2331, -1.1663" />
+<meta name="geo.position" content="46.2166;-1.1652" />
+<meta name="ICBM" content="46.2166, -1.1652" />
 
 <!-- Open Graph / réseaux sociaux -->
 <meta property="og:type" content="website" />
@@ -61,8 +60,8 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 46.2331,
-    "longitude": -1.1663
+    "latitude": 46.2166,
+    "longitude": -1.1652
   },
   "hasMap": "https://www.google.com/maps?q=4+Rue+du+Four+a+Chaux+17137+Nieul-sur-Mer",
   "areaServed": [
@@ -262,9 +261,12 @@
   .towns{display:flex;flex-wrap:wrap;gap:.6rem}
   .towns span{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);padding:.5rem .9rem;border-radius:50px;font-size:.9rem;font-weight:600}
   .zone-map{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:.7rem}
-  .zone-map svg{width:100%;height:auto;border-radius:12px}
-  .zone-map #map{width:100%;height:360px;border-radius:12px}
-  .zone-map .leaflet-popup-content-wrapper,.zone-map .leaflet-popup-tip{background:#fff;color:var(--texte)}
+  .fake-map{border-radius:12px;overflow:hidden;background:var(--bleu-clair)}
+  .fake-map-illustration{display:block;width:100%;height:auto}
+  .fake-map-label{display:flex;align-items:center;gap:.7rem;padding:1rem 1.1rem;background:var(--bleu)}
+  .fake-map-label svg{width:20px;height:20px;flex:none;color:#ffb488}
+  .fake-map-label strong{display:block;font-size:.95rem;color:#fff}
+  .fake-map-label span{display:block;font-size:.82rem;color:#cdddec}
   .map-link{display:inline-block;margin-top:.75rem;color:#ffb488;font-weight:700;font-size:.92rem}
   .map-link:hover{color:#fff}
 
@@ -519,7 +521,35 @@
         <a class="btn btn-primary" style="margin-top:1rem" href="#contact">Vérifier ma commune</a>
       </div>
       <div class="zone-map">
-        <div id="map" role="img" aria-label="Carte de la zone d'intervention de MC Peinture, Nieul-sur-Mer et agglomération de La Rochelle"></div>
+        <div class="fake-map">
+          <svg class="fake-map-illustration" viewBox="0 0 400 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration schématique de la zone d'intervention de MC Peinture, avec un repère sur Nieul-sur-Mer">
+            <rect width="400" height="230" fill="#eaf1f8"/>
+            <path d="M0,230 L0,105 C45,90 65,135 105,145 C145,155 138,195 158,230 Z" fill="#bcd4ea"/>
+            <path d="M15,45 L385,68" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+            <path d="M75,15 L60,225" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+            <path d="M262,8 C282,90 250,160 240,228" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+            <path d="M150,182 L345,152" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+            <rect x="108" y="72" width="32" height="22" rx="3" fill="#dbe5f1"/>
+            <rect x="160" y="98" width="26" height="20" rx="3" fill="#dbe5f1"/>
+            <rect x="205" y="52" width="30" height="22" rx="3" fill="#dbe5f1"/>
+            <rect x="292" y="42" width="28" height="24" rx="3" fill="#dbe5f1"/>
+            <rect x="312" y="102" width="30" height="26" rx="3" fill="#dbe5f1"/>
+            <rect x="175" y="30" width="24" height="18" rx="3" fill="#dbe5f1"/>
+            <circle cx="245" cy="158" r="52" fill="none" stroke="#e2703a" stroke-width="2" stroke-dasharray="5 6" opacity=".55"/>
+            <ellipse cx="245" cy="160" rx="11" ry="3.5" fill="rgba(15,44,77,.18)"/>
+            <g transform="translate(221,114) scale(2)">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#e2703a"/>
+              <circle cx="12" cy="9" r="2.6" fill="#fff"/>
+            </g>
+          </svg>
+          <div class="fake-map-label">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>MC Peinture</strong>
+              <span>4 Rue du Four à Chaux, Nieul-sur-Mer</span>
+            </div>
+          </div>
+        </div>
         <a class="map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=4%20Rue%20du%20Four%20%C3%A0%20Chaux%2C%2017137%20Nieul-sur-Mer" target="_blank" rel="noopener">Itinéraire vers notre atelier →</a>
       </div>
     </div>
@@ -705,17 +735,6 @@
   <a class="btn btn-primary" href="#contact">Devis gratuit</a>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-  // Carte zone d'intervention
-  var map = L.map('map', { scrollWheelZoom: false }).setView([46.2331, -1.1663], 12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
-  L.marker([46.2331, -1.1663]).addTo(map)
-    .bindPopup('MC Peinture<br>4 Rue du Four à Chaux, Nieul-sur-Mer').openPopup();
-</script>
 <script>
   // Menu mobile
   var burger = document.getElementById('burger');
